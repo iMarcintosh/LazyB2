@@ -12,6 +12,14 @@
 		49FE76461EE407DB00FBE12A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FE76441EE407DB00FBE12A /* Main.storyboard */; };
 		49FE76481EE407DB00FBE12A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FE76471EE407DB00FBE12A /* Assets.xcassets */; };
 		49FE764B1EE407DB00FBE12A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FE76491EE407DB00FBE12A /* LaunchScreen.storyboard */; };
+		49FE76541EE408B900FBE12A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE76531EE408B900FBE12A /* ContainerViewController.swift */; };
+		49FE76571EE408E500FBE12A /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE76561EE408E500FBE12A /* CenterViewController.swift */; };
+		49FE765A1EE4094F00FBE12A /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE76591EE4094F00FBE12A /* SidePanelViewController.swift */; };
+		49FE765C1EE40C0100FBE12A /* CenterView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FE765B1EE40C0100FBE12A /* CenterView.storyboard */; };
+		49FE765E1EE4102A00FBE12A /* SidePanelView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FE765D1EE4102A00FBE12A /* SidePanelView.storyboard */; };
+		49FE76601EE4113E00FBE12A /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE765F1EE4113E00FBE12A /* Animal.swift */; };
+		49FE76621EE421CF00FBE12A /* ContainerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FE76611EE421CF00FBE12A /* ContainerView.storyboard */; };
+		49FE76651EE4347E00FBE12A /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE76641EE4347E00FBE12A /* HamburgerButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		49FE76471EE407DB00FBE12A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49FE764A1EE407DB00FBE12A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49FE764C1EE407DB00FBE12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FE76531EE408B900FBE12A /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		49FE76561EE408E500FBE12A /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		49FE76591EE4094F00FBE12A /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
+		49FE765B1EE40C0100FBE12A /* CenterView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CenterView.storyboard; sourceTree = "<group>"; };
+		49FE765D1EE4102A00FBE12A /* SidePanelView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SidePanelView.storyboard; sourceTree = "<group>"; };
+		49FE765F1EE4113E00FBE12A /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		49FE76611EE421CF00FBE12A /* ContainerView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContainerView.storyboard; sourceTree = "<group>"; };
+		49FE76641EE4347E00FBE12A /* HamburgerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +70,54 @@
 		49FE763F1EE407DB00FBE12A /* LazyB */ = {
 			isa = PBXGroup;
 			children = (
+				49FE76631EE4346400FBE12A /* UI */,
+				49FE76521EE4089800FBE12A /* ContainerView */,
+				49FE76581EE4093B00FBE12A /* SidePanelView */,
+				49FE76551EE408CC00FBE12A /* CenterView */,
 				49FE76401EE407DB00FBE12A /* AppDelegate.swift */,
 				49FE76421EE407DB00FBE12A /* ViewController.swift */,
 				49FE76441EE407DB00FBE12A /* Main.storyboard */,
+				49FE765F1EE4113E00FBE12A /* Animal.swift */,
 				49FE76471EE407DB00FBE12A /* Assets.xcassets */,
 				49FE76491EE407DB00FBE12A /* LaunchScreen.storyboard */,
 				49FE764C1EE407DB00FBE12A /* Info.plist */,
 			);
 			path = LazyB;
+			sourceTree = "<group>";
+		};
+		49FE76521EE4089800FBE12A /* ContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				49FE76531EE408B900FBE12A /* ContainerViewController.swift */,
+				49FE76611EE421CF00FBE12A /* ContainerView.storyboard */,
+			);
+			name = ContainerView;
+			sourceTree = "<group>";
+		};
+		49FE76551EE408CC00FBE12A /* CenterView */ = {
+			isa = PBXGroup;
+			children = (
+				49FE76561EE408E500FBE12A /* CenterViewController.swift */,
+				49FE765B1EE40C0100FBE12A /* CenterView.storyboard */,
+			);
+			name = CenterView;
+			sourceTree = "<group>";
+		};
+		49FE76581EE4093B00FBE12A /* SidePanelView */ = {
+			isa = PBXGroup;
+			children = (
+				49FE76591EE4094F00FBE12A /* SidePanelViewController.swift */,
+				49FE765D1EE4102A00FBE12A /* SidePanelView.storyboard */,
+			);
+			name = SidePanelView;
+			sourceTree = "<group>";
+		};
+		49FE76631EE4346400FBE12A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				49FE76641EE4347E00FBE12A /* HamburgerButton.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +180,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FE765C1EE40C0100FBE12A /* CenterView.storyboard in Resources */,
+				49FE765E1EE4102A00FBE12A /* SidePanelView.storyboard in Resources */,
 				49FE764B1EE407DB00FBE12A /* LaunchScreen.storyboard in Resources */,
 				49FE76481EE407DB00FBE12A /* Assets.xcassets in Resources */,
 				49FE76461EE407DB00FBE12A /* Main.storyboard in Resources */,
+				49FE76621EE421CF00FBE12A /* ContainerView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +197,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FE76431EE407DB00FBE12A /* ViewController.swift in Sources */,
+				49FE76571EE408E500FBE12A /* CenterViewController.swift in Sources */,
+				49FE765A1EE4094F00FBE12A /* SidePanelViewController.swift in Sources */,
+				49FE76541EE408B900FBE12A /* ContainerViewController.swift in Sources */,
 				49FE76411EE407DB00FBE12A /* AppDelegate.swift in Sources */,
+				49FE76601EE4113E00FBE12A /* Animal.swift in Sources */,
+				49FE76651EE4347E00FBE12A /* HamburgerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
