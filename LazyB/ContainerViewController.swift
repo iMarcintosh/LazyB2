@@ -29,7 +29,8 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate {
     var leftViewController: SidePanelViewController?
     // var rightViewController: SidePanelViewController?
     
-    let centerPanelExpandedOffset: CGFloat = 700
+    // let centerPanelExpandedOffset: CGFloat = 700
+    let centerPanelExpandedOffset: CGFloat = 60
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,9 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate {
         centerNavigationController.didMove(toParentViewController: self)
         
         
-        self.navigationBlurEffect()
+        // self.navigationBlurEffect()
+        self.addBlurEffect(toView: self.centerNavigationController?.navigationBar)
+        // self.addBlurEffect()
         
     }
 
@@ -108,13 +111,70 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate {
     
     func navigationBlurEffect() {
         let bar:UINavigationBar! =  self.centerNavigationController.navigationBar
+
         let visualEffectView   = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
         visualEffectView.frame =  (bar.bounds.insetBy(dx: 0, dy: -10).offsetBy(dx: 0, dy: -10))
+        // visualEffectView.frame =  (bar.bounds.insetBy(dx: 0, dy: 0).offsetBy(dx: 0, dy: 0))
         bar.isTranslucent = true
         bar.setBackgroundImage(UIImage(), for: .default)
         bar.addSubview(visualEffectView)
         bar.sendSubview(toBack: visualEffectView)
     }
+    
+    func addBlurEffect(toView view:UIView?) {
+        // Add blur view
+        guard let view = view else { return }
+        
+        //This will let visualEffectView to work perfectly
+        if let navBar = view as? UINavigationBar{
+            navBar.setBackgroundImage(UIImage(), for: .default)
+            navBar.shadowImage = UIImage()
+            navBar.isTranslucent = true
+        }
+        
+        let bounds = view.bounds
+        // bounds.offsetBy(dx: 0.0, dy: -20.0)
+        bounds.insetBy(dx: 0.0, dy: 0.0).offsetBy(dx: 0.0, dy: 0.0)
+        // bounds.size.height = bounds.height + 20.0
+        
+        let blurEffect = UIBlurEffect(style: .regular)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        visualEffectView.isUserInteractionEnabled = false
+        // visualEffectView.frame = bounds
+        visualEffectView.frame =  (view.bounds.insetBy(dx: 0, dy: -10).offsetBy(dx: 0, dy: -10)) // important: outer ()
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.insertSubview(visualEffectView, at: 0)
+        
+    }
+    
+//        func addBlurEffect() {
+//            // Add blur view
+//            let navBar:UINavigationBar! =  self.centerNavigationController.navigationBar
+//    
+//            //This will let visualEffectView to work perfectly
+//
+//            navBar.setBackgroundImage(UIImage(), for: .default)
+//            navBar.shadowImage = UIImage()
+//            navBar.isTranslucent = true
+//
+//    
+//            let bounds = navBar.bounds
+//            // bounds.offsetBy(dx: 0.0, dy: -20.0)
+//            bounds.insetBy(dx: 0.0, dy: 0.0).offsetBy(dx: 0.0, dy: 0.0)
+//            // bounds.size.height = bounds.height + 20.0
+//    
+//            let blurEffect = UIBlurEffect(style: .regular)
+//            let visualEffectView = UIVisualEffectView(effect: blurEffect)
+//    
+//            visualEffectView.isUserInteractionEnabled = false
+//            // visualEffectView.frame = bounds
+//            visualEffectView.frame =  (navBar.bounds.insetBy(dx: 0, dy: -10).offsetBy(dx: 0, dy: -10))
+//            visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//            navBar.insertSubview(visualEffectView, at: 0)
+//
+//            
+//        }
     
     // MARK: Delegate Functions
     
@@ -166,7 +226,13 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate {
         if (shouldExpand) {
             currentState = .LeftPanelExpanded
             
-            animateCenterPanelXPosition(targetPosition: centerNavigationController.view.frame.width - centerPanelExpandedOffset)
+            print("width: ", centerNavigationController.view.frame.width - centerPanelExpandedOffset)
+            
+            // let targetPosition = view.frame.maxX - centerPanelExpandedOffset
+            let targetPosition = (view.frame.maxX * 40) / 100
+            
+            // animateCenterPanelXPosition(targetPosition: centerNavigationController.view.frame.width - centerPanelExpandedOffset)
+            animateCenterPanelXPosition(targetPosition: targetPosition)
         } else {
             animateCenterPanelXPosition(targetPosition: 0) { finished in
                 self.currentState = .BothCollapsed

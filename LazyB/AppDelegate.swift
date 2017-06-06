@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//        
+//        UINavigationBar.appearance().shadowImage = UIImage()
+//        
+//        UINavigationBar.appearance().backgroundColor = UIColor.clear
+//        
+//        UINavigationBar.appearance().isTranslucent = true
+        
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let containerViewController = ContainerViewController()
